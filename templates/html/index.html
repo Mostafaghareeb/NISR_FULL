@@ -1,0 +1,178 @@
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NISR TIRES TRINCO</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <img src="{% static 'images/newlogo-removebg-preview.png' %}" alt="images" class="logo">
+        <nav class="navigation">
+            <a href="{% url 'Customize_tap' %}" class="customize-button">Customize Your Tire</a>
+            <a href="#Home">Home</a>
+            <a href="#Tires">Tires</a>
+            <a href="{% url 'offers_page' %}" class="offers">Offers</a>
+            <a href="#About">About</a>
+            <a href="#Contact">Contact</a>
+            
+        </nav>
+    </header>
+    
+    
+    <video autoplay loop muted src="{% static 'video/video720.mp4' %}" id="Home"></video>
+    <section>
+    <div class="carousel" id="Tires">
+        <h2 class="title">Tires</h2>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/passenger_tire.png' %}" alt="Passenger">
+                <div class="info">
+                    <a href="{% url 'page2' %}">Passenger</a>
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/truck_tires.png' %}" alt="Truck">
+                <div class="info">
+                    <a href="{% url 'page2' %}">Truck</a>
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/motorcycle_tires.png' %}" alt="Motorcycles">
+                <div class="info">
+                    <a href="{% url 'page2' %}">Motorcycles</a>
+                    
+                </div>
+            </div>
+           
+            <div class="carousel-item">
+                <img src="{% static 'images/big_tires.png' %}" alt="Agricalture equipment">
+                <div class="info">
+                    <a href="{% url 'page2' %}">Agricalture equipment</a>
+                    
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control prev" onclick="prevSlide()">❮</button>
+        <button class="carousel-control next" onclick="nextSlide()">❯</button>
+    </div>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    </section>
+    <section class="cards" id="About">
+        <h2 class="title">About Us</h2>
+        <div class="tires">
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+                <div class="info">
+                    <h3>Tires Production</h3>
+                    <p>TRENCO started producing NISR Conventional Bias Tires, for Passenger Cars, Light Trucks, Buses, Trucks, Tractors, Bicycles and Motorcycles in 1956.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+                <div class="info">
+                    <h3>Inner Tubes Production</h3>
+                    <p> The emblem of NISR on The Tires and The Inner Tubes demonstrates their good quality and strength.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+                <div class="info">
+                    <h3>Nisr Is The Best</h3>
+                    <p>NISR tires are manufactured using standard raw materials from the best available sources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+    <div class="contact-message">
+        <h1>Contact Us</h1>      
+        <h4>Contact one of our Nisr Tire Advisors, we take great pride in our products, services, and relationship with valued customers like you.</h4>
+    <div class="contact-section">
+        <div class="contact-box">
+            <a href="#" class="phone-icon"><i class="fa-solid fa-phone" ></i></a>
+            <h2>Talk to Sales</h2>
+            <p>Mon - Fri <span class="firsttime">9:00 AM - 6:00 PM EST</span></p>
+            <p>Saturday  <span class="secondtime">9:00 AM - 6:00 PM EST</span></p>
+            <p>Sunday    <span class="thirdtime">Closed</span></p>
+            <p><b>01156435555</b></p>           
+        </div>
+        <div class="contact-box">
+            <a href="#" class="phone-icon"><i class="fa-solid fa-phone" ></i></a>
+            <h2>General Questions</h2>
+            <p>Mon - Fri <span class="firsttime">
+                8:30 AM - 5:00 PM EST</span></p>
+            <p>Saturday  <span class="secondtime">
+                Closed</span></p>
+            <p>Sunday    <span class="thirdtime">Closed</span></p>
+            <p><b>01223582033</b></p>           
+        </div>
+        <div class="contact-box">
+            <a href="#" class="phone-icon"><i class="fa-solid fa-envelope"></i></a>
+            <h2>Email US</h2>
+            <p>Please allow 48 hours for a response</p>        
+        </div>
+    </div>
+    <div class="container" id="Contact">
+        <div class="contact-form">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="column">
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="column">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="column">
+                        <input type="text" id="subject" name="subject" placeholder="Email Subject" required>
+                    </div>
+                </div>
+                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+{% endblock content %}
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        

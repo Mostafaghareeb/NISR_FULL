@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 99px;
+}
+
+.navigation .customize-button {
+    color: black;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: white;
+    border-radius: 25px; 
+    padding: 10px 20px; 
+    display: inline-block;
+    text-decoration: none; 
+    margin-right:170px;
+}
+
+.navigation .customize-button:hover {
+    background-color: #f0f0f0; 
+}
+
+
+.logo {
+    width: 200px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+  
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 10px 15px;
+}
+
+
+.navigation a:hover {
+    color: black;
+    
+}
+
+nav {
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+
+.offers{
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+section {
+    padding: 100px 200px;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(video/carvideo.mp4) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+video {
+    width: 100%;
+}
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 35%;
+    height: auto;
+    margin-bottom: 10px; 
+}
+.info {
+    width: 70%;
+    padding: 20px;
+    text-align: left;
+}
+
+.info a {
+    color: #3a6cf4;
+    text-align: center;
+    font-size: 25px;
+}
+
+
+
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.tires {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    width: 21.25em;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    transition: 0.7s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card .icon {
+    color: #3a6cf4;
+    font-size: 8em;
+    text-align: center;
+}
+
+.info {
+    text-align: center;
+}
+
+.info h3 {
+    color: #3a6cf4;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px;
+}
+
+
+.contact-message{
+    color:  black;
+    text-align:left;
+    font-size: x-large;
+    margin-bottom: 20px;
+    
+}
+
+
+.contact-message h4{
+    color:black;
+    text-align: left;
+    font-size:small;   
+    margin-top: 20px;  
+    margin-bottom: 80px;
+
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-around;
+}
+.contact-box {
+    width: 100%;
+    text-align: left;
+    font-size:medium;
+}
+.contact-box .phone-icon{
+    color: black;
+    font-size: 1.7em;
+    text-align:left;
+}
+.contact-box h2 {
+    position: relative;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+.contact-box h2::before,
+.contact-box h2::after {
+   
+    font-size: 2em;
+  
+    position: absolute;
+    top: -10px;                  
+}
+.contact-box h2::before {
+    left: -20px;
+}
+.contact-box h2::after {
+    right: -20px;
+}
+.contact-box p {
+    margin:0px;
+}
+
+
+.contact-box p .firsttime{
+    margin-left: 28px;
+}
+.contact-box p .secondtime{
+    margin-left: 24px;
+}
+.contact-box p .thirdtime{
+    margin-left: 37px;
+}
+
+
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-form {
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-form h1 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 0 0 48%;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color:black;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: black;
+}
+
+
+@media (max-width:641px){
+    body{
+        font-size: 12px;
+    }
+
+    .main-content h2{
+        font-size: 0.8em;
+    }
+
+    .main-content h3{
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width:300px){
+    body{
+        font-size: 10px;
+     
+    }
+}

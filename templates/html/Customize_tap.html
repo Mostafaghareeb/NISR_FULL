@@ -1,0 +1,79 @@
+{%load static%}
+{% block content %}
+
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tire Selection</title>
+    <link rel="stylesheet" href="{% static 'css/Customize_style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <div class="new-container">
+        <h1>Rock Your Tire</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="new-form-group">
+                <div class="Logo">Choose your logo</div>
+                <div class="rectangle">
+                    <div class="navbar">
+                        <div class="browse-btn-wrapper">
+                            <button type="button">Browse</button>
+                            <input type="file" name="logo" id="fileInput" style="display: none;" />
+                        </div>
+                        <img id="imagePreview" class="image-preview" src="" alt="Image Preview" style="display: none;">
+                    </div>
+                </div>
+        
+                <script>
+                    document.querySelector('.browse-btn-wrapper button').onclick = function() {
+                        document.querySelector('.browse-btn-wrapper input[type=file]').click();
+                    };
+                
+                    document.getElementById('fileInput').onchange = function(event) {
+                        const file = event.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = function(e) {
+                                const img = document.getElementById('imagePreview');
+                                img.src = e.target.result;
+                                img.style.display = 'block';
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    };
+                </script>                
+            </div>
+            
+            <div class="new-form-group">
+                <label for="tire_color">Tire Color</label>
+                <select name="tire_color" id="tire_color">
+                    <option value="">Tire Color</option>
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Red">Red</option>
+                </select>
+            </div>
+        
+            <div class="new-form-group">
+                <label for="trim">Trim</label>
+                <select name="trim" id="trim">
+                    <option value="">Trim</option>
+                    <option value="Standerd">Standerd</option>
+                    <option value="Zigzag">Zigzag</option>
+                    <option value="Crazy Boy">Crazy Boy</option>
+                </select>
+            </div>
+        
+            <button type="submit">SUBMIT</button>
+        </form>        
+        <p>Need Support From <a href="{% url 'index'%}#Contact ">Let us help</a></p>
+    </div>
+   
+</body>
+</html>
+{% endblock content %}

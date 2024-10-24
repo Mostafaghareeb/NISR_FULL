@@ -1,0 +1,37 @@
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/offers_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Offers Page</title>
+</head>
+<body>
+    <header class="header">
+        <img src="{% static 'images/char.jpg' %}" alt="Left Image" class="left-img">
+        <p class="container">CHANGE YOUR TIRES NOW!!</p>
+      
+        <img src="{% static 'images/char.jpg' %}" alt="Right Image" class="right-img">
+    </header>
+    
+ 
+    <div class="offer">
+        <p>Get A Free Air Compressor</p>
+        <img src="{%static 'images/Get Air compressor.png' %}" alt="" class="offer_img">
+    </div>
+    <div class="circular-line"></div>
+    <div class="offer">
+        <p>Free Installation</p>
+        <img src="{%static 'images/offer2.png'%}" alt="" class="offer_img">
+    </div>
+    <div class="circular-line"></div>
+    <div class="offer">
+        <p>Relax, We Will Do It</p>
+        <img src="{% static 'images/offer3.png'%}" alt="" class="offer_img">
+    </div>
+</body>
+</html>
+{% endblock content %}

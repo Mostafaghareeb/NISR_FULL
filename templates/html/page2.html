@@ -1,0 +1,146 @@
+{%load static%}
+{% block content %}
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tire Selection</title>
+    <link rel="stylesheet" href="{% static 'css/newstyle.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="{% url 'index'%}" class="arrow-left"><i class="fa-solid fa-arrow-left"></i></a>
+    </header>
+    <div class="new-container">
+        <h1>Order your tire</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="new-form-group">
+                <label for="width">Width</label>
+                <select id="width" name="width"  >
+                    <option>Width</option>
+                    <option>135</option>
+                    <option>145</option>
+                    <option>155</option>
+                    <option>165</option>
+                    <option>175</option>
+                    <option>185</option>
+                    <option>195</option>
+                    <option>205</option>
+                    <option>215</option>
+                    <option>225</option>
+                    <option>235</option>
+                    <option>245</option>
+                    <option>255</option>
+                    <option>265</option>
+                    <option>275</option>
+                    <option>285</option>
+                    <option>295</option>
+                    <option>305</option>
+                    <option>315</option>
+                    <option>325</option>
+                    <option>335</option>
+                    <option>345</option>
+                    <option>355</option>
+                    <option>30 (4x4)</option>
+                    <option>31 (4x4)</option>
+                    <option>32 (4x4)</option>
+                    <option>33 (4x4)</option>
+                    <option>35 (4x4)</option>
+                    <option>37 (4x4)</option>
+                    <option>8.5</option>
+                    <option>13.5</option>
+                    <option>17</option>
+                   
+                </select>
+            </div>
+            <div class="new-form-group">
+                <label for="ratio">Ratio</label>
+                <select id="ratio" name="ratio">
+                    <option>Profile</option>
+                    <option>35</option>
+                    <option>40</option>
+                    <option>45</option>
+                    <option>50</option>
+                    <option>55</option>
+                    <option>60</option>
+                    <option>65</option>
+                    <option>70</option>
+                    <option>75</option>
+                    <option>80</option>
+                   
+                </select>
+            </div>
+            <div class="new-form-group">
+                <label for="rim-size">Rim Size</label>
+                <select id="rim-size" name="rim_size">
+                    <option>Diameter</option>
+                    <option>R 15</option>
+                    <option>R 16</option>
+                    <option>R 17</option>
+                    <option>R 19</option>
+                   
+                </select>
+            </div>
+            <div class="new-form-group">
+                <label for="speed-rating">Speed Rating</label>
+                <select id="speed-rating" name="speed_rating">
+                    <option>Speed Rating</option>
+                    <option>All</option>
+                    <option>H</option>
+                    <option>V</option>
+                   
+                </select>
+            </div>
+            <div class="new-form-group">
+                <label for="governorate">Governorate</label>
+                <select id="governorate" name="governorate">
+                    <option >Governorate</option>
+                    <option class="unselectable"> Top searched governorates</option>
+                    <option >Ismailia</option>
+                    <option >Mansorua</option>
+                    <option >New Valley</option>
+                    <option class="unselectable">All governorates</option>
+                    <option >Cairo</option>
+                    <option >Giza</option>
+                    <option >Alexandria</option>
+                    <option >North Coast</option>
+                    <option >Faiyum</option>
+                    <option >Ismailia</option>
+                    <option >Suez</option>
+                    <option >Port Said</option>
+                    <option >Matrouh</option>
+                    <option >Beheira</option>
+                    <option >Damietta</option>
+                    <option >Qalyubia</option>
+                    <option >Al Sharqia</option>
+                    <option >Tanta</option>
+                    <option >Mansoura</option>
+                    <option >Monufia</option>
+                    <option >Aswan</option>
+                    <option >Asyut</option>
+                    <option >Luxor</option>
+                    <option >Hurghada</option>
+                    <option >Beni Suef</option>
+                    <option >Minya</option>
+                    <option >Sohag</option>
+                    <option >Qena</option>
+                </select>
+            </div>
+            <div class="new-form-group">
+                <label for="delivery">Installed or Mail order</label>
+                <select id="delivery" name="delivery">
+                    <option value="Installed">Tire Installation</option>
+                    <option value="Mail order">Delivery Without Installation</option>
+                </select>
+            </div>
+            <button type="submit">Order</button>
+        </form>
+        <p>Not sure what your tire size is? <a href="{% url 'index' %}#Contact">Let us help</a></p>
+    </div>
+   
+</body>
+</html>
+{% endblock content %}
